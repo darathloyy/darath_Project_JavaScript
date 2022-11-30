@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../../style/style.css ">
+</head>
+<body>
+    <nav>
+        <ul>
+          <a href="../../index.html"><img src="../../img/logo.png" /></a>
+        </ul>
+        <ul>
+          <li><a href="edit.html">SELLER</a></li>
+          <li><a href="../customer/customer.html">CUSTOMER</a></li>
+          <li><a href="views/play/play.html">LOGIN</a></li>
+          <li><a href="views/play/play.html">CARD</a></li>
+          <li id="color"><a href=""></a></li>
+        </ul>
+      </nav>
+
+      <div id="foods-dialog" style="display: none;">
+        <dialog open>
+          <header>Create new question</header>
+  
+          <section>
+            <input id="textName" type="text" placeholder="name food" />
+            <input id="textPrice" type="text" placeholder="price of food" />
+            <input id="theImag" type="file" placeholder="img"/>
+          </section>
+          <menu>
+            <button onclick="onCancel()">Cancel</button>
+            <button onclick="onCreate()">Create</button>
+          </menu>
+        </dialog>
+      </div>
+
+      <div class="food">
+        <h3><button id="btn_Add">Add Food</button></h3>
+        <div class="choose">
+          
+        </div>
+      </div>
+
+      <div class="message">
+
+      </div>
+</body>
+<script src="edit.js"></script>
+</html>

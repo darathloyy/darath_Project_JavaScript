@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../../style/style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+          <a href="../../index.html"><img src="../../img/logo.png" /></a>
+        </ul>
+        <ul>
+          <li><a href="../edit/edit.html">SELLER</a></li>
+          <li><a href="customer.html">CUSTOMER</a></li>
+          <li><a href="views/play/play.html">LOGIN</a></li>
+          <li><a href="views/play/play.html">CARD</a></li>
+        </ul>
+      </nav>
+      <div id="foods-dialog" " style="display: none;">
+        <dialog class="to-order" open>
+          <header>🍔🍕🍕fast to fast for to eat🍕🍕🍔</header>
+  
+          <section >
+            <input id="textPrice" type="number" placeholder="Number of orders*" />
+            <input id="" type="text" placeholder="Your location*"/>
+            <input id="" type="text" placeholder="Phone number*"/>
+            <input id="" type="text" placeholder="Your location*"/>
+            <textarea name="" id="" cols="30" rows="10" placeholder="Other..."></textarea>
+          </section>
+          <menu>
+            <button onclick="onCancel()">Cancel</button>
+            <button onclick="onCreate()">Order Now</button>
+          </menu>
+        </dialog>
+      </div>
+      <div class="container">
+        <div class="search">
+            <p><input type="search" placeholder="waht are you looking for..."><img src="../../img/search.png" alt=""  width="1%"></p>
+            <h2><span>Choose</span> from dozens of cuisines and order online for home <span>delivery</span></h2>
+        </div>
+      </div>
+      <div class="food">
+        <h3><span>Other</span> all the food that interested for you</h3>
+        <div class="choose"></div>
+      </div>
+      <div class="footer">
+        <div class="help">
+            <h3>Follow Fastfood Page</h3>
+            <a href="https://www.youtube.com/watch?v=npaaFOwfKZk"><img src="../../img/youtube.png" alt="" width="25%"></a>
+            <a href="https://www.facebook.com/fastfoodonline/"><img src="../../img/fecebook.png" alt="" width="25%"></a>
+        </div>
+        <div class="help">
+            <h3>Customer service</h3>
+            <a href="">Contact Us</a>
+            <a href="">Register</a>
+        </div>
+        <div class="help">
+            <h3>Useful Information</h3>
+            <a href="">Safety Tip</a>
+            <a href="">Ad Posting Rule</a>
+        </div>
+        <div class="app">
+            <a href="https://play.google.com/store/apps/details?id=com.stamsoft.fastfood&hl=en&gl=US"><img src="../../img/googleplay.png" alt="" width="70%"></a>
+        </div>
+      </div>
+</body>
+<script src="customer.js"></script>
+</html>
