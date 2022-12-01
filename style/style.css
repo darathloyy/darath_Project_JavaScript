@@ -4,6 +4,7 @@ body{
     height: 100vh;
     font-family: sans-serif;
     
+    
 }
 nav {
     margin: 0%;
@@ -47,7 +48,7 @@ ul li a {
 
 text-decoration: none;
 color: rgb(0, 0, 0);
-background-color: orange;
+border: 2px solid black;
 border-radius: 20px;
 font-weight: bold;
 }
@@ -78,7 +79,7 @@ span{
     margin: 0%;
     display: flex;
     flex-direction: row;    
-    background-color: rgba(255, 166, 0, 0.381);
+    background-color: rgba(76, 62, 38, 0.381);
 }
 .page{
     display: flex;
@@ -102,9 +103,10 @@ span{
 /* -----------------------------------------Page Customer------------------------------------------------------- */
 .container{
     margin: -1.5%;
-    background-image: url(../img/bac_customer.png);
+    background-color: rgba(0, 0, 0, 0.249);
+    background-image: url(../img/english17409.jpg);
     background-size: cover;
-    height: 160%;
+    height: 70%;
     text-align: center;
 }
 .search img{
@@ -117,30 +119,42 @@ span{
 .search input{
     border: 2px solid orange;
     padding: 1%;
-    width: 50%;
+    width: 70%;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
     
 }
 .search p {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding-top: 5%;
+    padding-top: 25%;
+
 }
-.food h3{
-    text-align: center;
-}
+
 .choose{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+
 }
+.food{
+
+    background-color: rgba(255, 123, 0, 0.464); 
+    margin-top: -0.1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} 
+
 .card{
-    border: 2px solid orange;
-    width: 15%;
-    padding: 5px;
+    width: 20%;
+    padding: 1%;
     margin: 1%;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border: 5px solid orange;
+    background-color: rgba(236, 188, 16, 0.292);
 }
+
 .name-food,.other{
     display: flex;
     flex-direction: row;
@@ -148,8 +162,11 @@ span{
 }
 .other button{
     border: none;
-    background-color: orangered;
+    background-color: orange;
     padding: 5%;
+    color: white;
+    
+    
 }
 .delete:hover{
     cursor: pointer;
@@ -159,6 +176,7 @@ span{
     cursor: pointer;
     background-color: red;
 }
+
 /* -----------------------------------------food dialog--------------------------------- */
 #foods-dialog{
     padding-top: 5%;
@@ -173,7 +191,7 @@ span{
 
 }
 dialog{
-    width: 50%;
+    width: 40%;
     border: 5px solid orangered;
     
 }
@@ -184,6 +202,7 @@ section{
 }
 .to-order{
     background-color: rgba(255, 166, 0, 0.226);
+    
     width: 30%;
     margin-top: -4.5%;
     border-radius: 5%;
@@ -232,12 +251,61 @@ header{
     font-weight: bold;
     font-size: 30px;
 }
+.to-orde:hover{
+    background-color: red;
+}
+.to-view:hover{
+    background-color: red;
+}
 
-
-#btn_Add{
-    background-color: orange;
-    border: none;
-    padding:10px 30px 10px 30px;
-    font-size: 30px;
+.name-food p{
     font-weight: bold;
+}
+/* ---------------------------------------------SELL PAGE------------------------------- */
+#btn_Add{
+    margin-top: 3%;
+    background-color: orange;
+    border: 2px solid black;   
+    font-weight: bold;
+    padding: 10px;
+    
+    
+}
+.cards:hover{
+    background-color: rgba(255, 166, 0, 0.23);
+}
+.card:hover{
+    background-color: rgba(20, 19, 19, 0.271);
+}
+.cards{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(6, 6, 6, 0.245);
+    margin-bottom: 1%;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 1%;
+
+}
+.to_dos{
+    display: flex;
+    width: 20%;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-right: -4%;
+    
+}
+.name-foods{
+    display: flex;
+    flex-direction: row;
+}
+.name-foods{
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
 }

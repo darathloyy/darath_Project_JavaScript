@@ -1,10 +1,28 @@
 let foods = JSON.parse(localStorage.getItem("foods"));
-console.log(foods);
+
 
 const dom_food_view = document.querySelector(".food");
 const dom_food_dialog = document.querySelector("#foods-dialog");
 
+let getBtnSrearch = document.querySelector(".search p input");
+getBtnSrearch.addEventListener("keyup",getSrearch)
 
+function getSrearch(){
+    let SearchInput=getBtnSrearch.value.toLocaleLowerCase();
+    let getAllcard =document.querySelectorAll(".card");
+    console.log(SearchInput)
+    for (let i =0 ; i < getAllcard.length;i++){
+        let valuCard = getAllcard[i]
+        let a = valuCard.firstElementChild.textContent.toLocaleLowerCase();
+        if (a .includes(SearchInput)){
+            valuCard.style.display = "block";
+        }
+        else{
+            valuCard.style.display ="none";
+        }
+    }
+}
+console.log(getBtnSrearch);
 
 function hide(element) {
     element.style.display = "none";
@@ -14,6 +32,19 @@ function show(element) {
     element.style.display = "block";
 }
   
+
+let information_by =[];
+
+function saveFoods() {
+    localStorage.setItem("informate", JSON.stringify(information_by));
+}
+function loacalFoods() {
+    let inforStorage = JSON.parse(localStorage.getItem("informate"));
+    if (foodsStorage !== null) {
+        information_by = inforStorage;
+        console.log(inforStorage)
+    }
+}
 
 function renderfood() {
     
@@ -25,9 +56,12 @@ function renderfood() {
         
         let card = document.createElement("div");
         card.className="card";
-
-        // let toDo = document.createElement("div");
-        // toDo.className="to_do";
+        card.dataset.index =index;
+        
+        let toDo = document.createElement("div");
+        toDo.className="to_do";
+        toDo.textContent=food.kinf_food;
+        
 
         let imgFood = document.createElement("img");
         imgFood.src =food.picture;
@@ -37,24 +71,24 @@ function renderfood() {
         order.className="other";
         
 
-        let btn =document.createElement("button");
-        btn.textContent="Order"
-        btn.addEventListener("click",onAddfood)
+        // let btn =document.createElement("button");
+        // btn.textContent="Order"
         
         
-        // let Delete =document.createElement("img");
-        // Delete.className="delete";
-        // Delete.addEventListener("click",deletefoods);
-        // Delete.src="../../img/delete.png";
-        // Delete.style.width="20%";
-        // console.log(Delete);
-
-        // let Edit =document.createElement("img");
-        // Edit.className="edit";
-        // Edit.src="../../img/edit.png";
-        // Edit.style.width="19%";
-        // Edit.style.margin="2%";
-        // console.log(Edit);
+        let orders =document.createElement("img");
+        orders.className="to-orde";
+        // orders.addEventListener("click",deletefoods);
+        orders.addEventListener("click",OrderTheFood)
+        orders.src="../../img/order.png";
+        orders.style.width="15%";
+        
+        
+        // let views =document.createElement("img");
+        // views.className="to-view";
+        // views.src="../../img/view.png";
+        // views.style.width="19%";
+        // views.style.margin="2%";
+    
 
         let star = document.createElement("div");
         star.className = "star";
@@ -76,61 +110,58 @@ function renderfood() {
         priceFood.className="price";
         priceFood.textContent=food.price;
 
-        // toDo.appendChild(Delete);
-        // toDo.appendChild(Edit);
+        // toDo.appendChild(orders);
+        // toDo.appendChild(views);
 
-        order.appendChild(btn);
+        order.appendChild(orders);
         order.appendChild(star);
 
 
         name_food.appendChild(nameFood);
         name_food.appendChild(priceFood);
         // console.log(name_food);
-        // card.appendChild(toDo);
+        card.appendChild(toDo);
         card.appendChild(imgFood);
         card.appendChild(name_food);
         card.appendChild(order);
         choose.appendChild(card);
+        console.log(card)
     }
-    console.log(choose)
+ 
 }
-function onAddfood() {
+
+
+function OrderTheFood() {
     show(dom_food_dialog);
+    
+    // document.querySelector(".choosed").textContent = getCard;
 }
 
 function onCancel(e) {
     hide(dom_food_dialog)
 }
 
-function onCreate(e) {
+function OrderNow(e) {
     
     hide(dom_food_dialog);
     
-    
     let task = {};
-    task.kinf_food=dom_food_dialog.querySelector("#textName").value;
-    task.price=dom_food_dialog.querySelector("#textPrice").value;
-    task.picture=dom_food_dialog.querySelector("#theImag").value;
+    task.NUMBER=dom_food_dialog.querySelector("#nu").value;
+    task.LOCATION=dom_food_dialog.querySelector("#loc").value;
+    task.PHONE=dom_food_dialog.querySelector("#pho").value;
+    task.MESSAGE=dom_food_dialog.querySelector("#mess").value;
+    task.DATE=dom_food_dialog.querySelector("#date").value;
 
     console.log(task.picture);
     
     
-    foods.push(task);
+    information_by.push(task);
+
+    console.log(information_by);
     
     saveFoods();
     
     renderfood();
 }
+
 renderfood();
-
-
-const onClickButton =dom_food_view.querySelector("#btn_Add");
-onClickButton.addEventListener("click",onAddfood);
-  
-  
-const onClickButtonCancel =dom_food_dialog.querySelectorAll("button")[0];
-onClickButtonCancel.addEventListener("click",onCancel);
-  
-  
-const onClickButtonCreate =dom_food_dialog.querySelectorAll("button")[1];
-onClickButtonCreate.addEventListener("click",onCreate); 
