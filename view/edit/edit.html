@@ -9,18 +9,18 @@
     <link rel="stylesheet" href="../../style/style.css ">
 </head>
 <body>
-    <nav>
+    <nav class="nav">
         <ul>
           <a href="../../index.html"><img src="../../img/logo.png" /></a>
         </ul>
         <ul>
-          <li><a href="edit.html">SELLER</a></li>
+          <li class="active"><a href="edit.html">PRODCUT</a></li>
           <li><a href="../customer/customer.html">CUSTOMER</a></li>
-          <li><a href="views/play/play.html">LOGIN</a></li>
-          <li><a href="views/play/play.html">CARD</a></li>
+          <!-- <li><a href="../customer_order/order.html">ORDER</a></li> -->
+          
           <li id="color"><a href=""></a></li>
         </ul>
-      </nav>
+      </nav><br><br><br><br>
 
       <div id="foods-dialog" style="display: none;">
         <dialog open>
@@ -38,13 +38,24 @@
         </dialog>
       </div>
 
+      
+      
+      
       <div class="food">
         <h3><button id="btn_Add" onclick="onAddfood()">Add Food</button></h3>
         <div class="choose"></div>
-   
         
+      
       </div>
       
+      <div id="delete-dialog" style="display: none;">
+        <dialog open >
+          <menu class="yesno">
+            <button onclick="onCancel()">NO</button>
+            <button id="yes">YES</button>
+          </menu>
+        </dialog>
+      </div>
       <!-- <div class="message"></div> -->
 </body>
 <script src="edit.js"></script>

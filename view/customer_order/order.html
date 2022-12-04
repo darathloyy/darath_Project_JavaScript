@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../style/style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+          <a class="logo" href="../../index.html"><img src="../../img/logo.png" /></a>
+        </ul>
+        <ul>
+          <li><a href="../edit/edit.html">PRODUCT</a></li>
+          <li><a href="../customer/customer.html">CUSTOMER</a></li>
+          <li id="order"  class="imgOder"><a href="../customer_order/order.html" ><img src="../../img/ordericon.png" alt="" ><span class="sum">0</span></a></li>
+          
+        </ul>
+      </nav><br><br><br><br><br><br>
+
+      <div id="foods-dialog" style="display: none;">
+        <dialog class="to-order" open>
+          <header>🍔🍕🍕fast to fast for to eat🍕🍕🍔</header>
+  
+          <section >
+
+            <input id="loc" type="text" placeholder="Your location*"/>
+            <input id="pho" type="text" placeholder="Phone number*"/>
+            <input id="date" type="date" placeholder=""/>
+            
+            <textarea name="" id="mess" cols="30" rows="10" placeholder="Other..."></textarea>
+          </section>
+          <menu>
+            <button onclick="onCancel()">Cancel</button>
+            <button onclick="OrderNow()" >Order Now</button>
+            <div class="choosed"></div>
+          </menu>
+        </dialog>
+      </div>
+      <div class="total">
+        <h3>Total:</h3>
+        <button onclick="byFood()">BY NOW</button>
+      </div>
+      <div class="display">
+
+        
+      </div>
+
+      
+      
+</body>
+<script src="order.js"></script>
+</html>

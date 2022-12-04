@@ -6,23 +6,31 @@ body{
     
     
 }
+:root {
+    --main-color: orangered;
+    
+  }
+/* -------------------------------navBar---------------------------------------- */
 nav {
     margin: 0%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    background-color: rgba(255, 166, 0, 0.381);
-    position: sticky;
+    background-color: rgba(255, 166, 0, 0.495);
+    position: fixed;
     top: 0;
+    z-index: 10;
 }
 
-
+.nav{
+    width: 100%;
+}
 ul > h2 {
     margin-left: 30px;
 } 
 
 nav img {
-    width: 20%;
+    width: 10%;
     cursor: pointer;
 }
 
@@ -34,33 +42,50 @@ ul {
 }
 
 ul li {
+    display: flex;
+    flex-direction: row;
     list-style: none;
-    padding: 5px 10px;
-    margin-left: 5px;
+    margin-right: 6%;
     cursor: pointer;
+    
+}
+ul li a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 li a{
     padding: 10px;
+    color: white;
 
 
 }
-ul li a {
-
-text-decoration: none;
-color: rgb(0, 0, 0);
-border: 2px solid black;
-border-radius: 20px;
-font-weight: bold;
+ul li:hover{
+    background-color: blue;
 }
-ul li:hover {
+ul li {
+
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    border: 2px solid black;
+    border-radius: 20px;
+    font-weight: bold;
+    background-color: orange;
+}
+a{
+    text-decoration: none;
+}
+ul li :hover {
 background-color: var(--main-color-light);
 border: none;
 }
 
-.active {
+.active{
     background-color: var(--main-color);
-    color: white;
+    color: rgb(78, 36, 36);
 }
+
+/* ----------------------------------------------------Home Page------------------------------------------ */
 .home{
     margin: -2%;
     background-image: url(../img/background_home.png);
@@ -75,18 +100,27 @@ span{
     color: orangered;
     font-size: 50px;
 }
+.sum{
+    font-size: 15px;
+    background-color: rgb(255, 0, 0);
+    padding: 5px;
+    border-radius: 50%;
+    color: black;
+}
+/* ------------------------------footer------------------------------------------------------------------------ */
 .footer{
     margin: 0%;
     display: flex;
     flex-direction: row;    
-    background-color: rgba(76, 62, 38, 0.381);
+    background-color: rgb(46, 44, 44);
 }
 .page{
     display: flex;
     flex-direction: column;
-
+    
 }
 .help{
+    color: rgb(90, 85, 85);
     text-decoration: none;
     padding: 5%;
     display: flex;
@@ -102,7 +136,8 @@ span{
 }
 /* -----------------------------------------Page Customer------------------------------------------------------- */
 .container{
-    margin: -1.5%;
+    /* margin: -1.5%; */
+    margin-top: 7%;
     background-color: rgba(0, 0, 0, 0.249);
     background-image: url(../img/english17409.jpg);
     background-size: cover;
@@ -117,7 +152,7 @@ span{
     border-bottom-right-radius:20% ;
 }
 .search input{
-    border: 2px solid orange;
+    border: 5px solid orange;
     padding: 1%;
     width: 70%;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
@@ -131,21 +166,26 @@ span{
 
 }
 
+ .a{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-decoration: none;
+
+}
 .choose{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-
 }
 .food{
 
-    background-color: rgba(255, 123, 0, 0.464); 
+    background-color: rgb(251, 249, 249); 
     margin-top: -0.1%;
     display: flex;
     flex-direction: column;
     align-items: center;
 } 
-
 .card{
     width: 20%;
     padding: 1%;
@@ -168,13 +208,27 @@ span{
     
     
 }
+#order{
+    border: none;
+    margin-left: 2px;
+}
+#order img{
+    width: 20% ;
+}
+.other{
+    display: flex;
+    flex-direction: row;
+}
 .delete:hover{
     cursor: pointer;
     background-color: red;
+    border-radius:5% ;
 }
 .edit:hover{
     cursor: pointer;
     background-color: red;
+    border-radius:5% ;
+
 }
 
 /* -----------------------------------------food dialog--------------------------------- */
@@ -190,6 +244,19 @@ span{
     margin-bottom: 10%;
 
 }
+#cards-dialog{
+    padding-top: 1%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 10;
+    margin-bottom: 10%;
+
+}
+
 dialog{
     width: 40%;
     border: 5px solid orangered;
@@ -201,13 +268,18 @@ section{
     
 }
 .to-order{
-    background-color: rgba(255, 166, 0, 0.226);
-    
+    background-color: white;
     width: 30%;
     margin-top: -4.5%;
     border-radius: 5%;
     border: 4px solid gray;
     
+}
+.to-order input{
+    border: 2px solid orangered;
+}
+.to-order input:hover{
+    border: 2px solid rgb(21, 0, 255);
 }
 ::placeholder{
     border: none;
@@ -237,6 +309,7 @@ section input{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    font-size: 20;
 }
 menu{
     text-align: end;
@@ -253,9 +326,14 @@ header{
 }
 .to-orde:hover{
     background-color: red;
+    border-radius:5% ;
+    padding: 2%;
+
 }
 .to-view:hover{
     background-color: red;
+    border-radius:5% ;
+
 }
 
 .name-food p{
@@ -308,4 +386,262 @@ header{
     flex-direction: row;
     justify-content: space-between;
     
+}
+/* ---------------------------------------------------page order------------------------------------------- */
+
+.display{
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 2%;
+    /* height: 100%; */
+   
+}
+.cardOrder{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(252, 250, 245);
+    width: 100%;
+    padding: 1%;
+    margin-bottom: 2%;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+.myCard{
+    background-color:rgb(193, 164, 110);
+    padding: 1%;
+    width: 40%;
+    height: 50%;
+    margin: 3%;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+.remove{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.trash:hover{
+    cursor: pointer;
+    background-color: black;
+    padding: 2px;
+    border-radius: 50%;
+}
+
+/* ---------------------------- */
+.cards-dialog{
+    border: 5px solid blue;
+    color: rgb(35, 44, 46);
+}
+.register{
+    padding: 2%;
+    background-color: blue;
+    text-align: center;
+}
+.carddialog input{
+    border: 2px solid blue;
+    margin-top: -0.1%;
+}
+.carddialog input:hover{
+    cursor: pointer;
+    border: 2px solid orange;
+}
+.carddialog button{
+    cursor: pointer;
+    border: none;
+    padding: 2%;
+    background-color: blue;
+    color: wheat;
+}
+.carddialog button:hover{
+    background-color: orange;
+    color: black;
+}
+
+.menu button{
+    background-color: blue;
+    color: wheat;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.menu button:hover{
+    cursor: pointer;
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: orange;
+    color: black;
+}
+
+/* --------------------------------------------Create Star--------------------- */
+
+/* use reverse flexbox to take advantage of flex-direction: reverse */
+
+
+
+
+  /* ----------------------------------------------- */
+ 
+  .displayDetial{
+    display: flex;
+    flex-direction: row;
+    /* padding-top: 10%; */
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+    
+    flex-wrap: wrap;
+    background-color:rgba(243, 185, 13, 0.227) ;
+  }
+.back a {
+
+    background-color: rgb(243, 185, 13);
+    
+    padding: 10px;
+    text-align: center;
+    border: 2px solid orangered;
+}
+.displayDetial a:hover {
+    cursor: pointer;
+    background-color: red;
+    /* padding: 1%; */
+}
+
+.card1{
+    width: 30%;
+    background-color: white;
+    /* padding: 1%; */
+    text-align: center;
+    /* border-top-left-radius: 40%;
+    border-bottom-right-radius: 40%; */
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}
+.card1 div{
+    text-align: center;
+    margin-top: 2%;
+    color: rgb(25, 23, 18);
+    font-size: 20px;
+    font-weight: bold;
+    
+}
+.divStar{
+    border-bottom: 2px solid black;
+    margin-left: 20%;
+    margin-right: 20%;
+    
+}
+.divStar i{
+    color: black;
+}
+.card2{
+    width: 50%;
+    background-color: white;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+
+}
+
+
+.total{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1%;
+}
+.total button{
+    background-color: rgb(34, 0, 255);
+    color: orangered;
+    border-radius: 20px;
+    
+
+}
+
+.card2 div{
+    
+    color: rgb(0, 4, 255);
+    width: 100%;
+    /* background-color: bisque; */
+    text-align: center;
+
+
+} 
+.social img:hover{
+    cursor: pointer;
+}
+.card2 img {
+    width:10%;
+}
+
+  #delete-dialog{
+    padding-top: 5%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 10;
+    margin-bottom: 10%;
+
+}
+#delete-dialog dialog{
+    border: none;
+    width: 30%;
+}
+#delete-dialog dialog menu{
+    padding: 0%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* -------------------------------------------------responsive------------------------------- */
+@media(max-width:428px){
+    .card{
+        width: 100%;
+    }
+    #foods-dialog .to-order{
+        width: 80%;
+    }
+    .footer{
+        display: flex;
+        flex-direction: column;
+    }
+    .to-orde{
+        width: 10%;
+    }
+    .displayDetial{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .card1{
+        width: 50%;
+    }
+    .card2{
+        width: 50%;
+    }
+
+    .imgOder img{
+        width: 100%;
+    }
+    ul li a {
+        font-size: 10px;
+    }
+    ul{
+        padding-right: 10%;
+    }
+    .logo{
+        width: 100%;
+    }
+    .name-foods p{
+        font-size: 10px;
+    }
+    .card img{
+        width: 100%;
+    }
+   
 }

@@ -5,53 +5,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
     <link rel="stylesheet" href="../../style/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
+  
     <nav>
         <ul>
           <a href="../../index.html"><img src="../../img/logo.png" /></a>
         </ul>
         <ul>
-          <li><a href="../edit/edit.html">SELLER</a></li>
-          <li><a href="customer.html">CUSTOMER</a></li>
-          <li><a href="views/play/play.html">LOGIN</a></li>
-          <li><a href="views/play/play.html">CARD</a></li>
+          <li><a href="../edit/edit.html">PRODUCT</a></li>
+          <li class="active"><a href="customer.html">CUSTOMER</a></li>
+          <li id="order"><a href="../customer_order/order.html" ><img src="../../img/ordericon.png" alt=""  ><span class="sum">0</span></a></li>
+          <li> <a href="" >CARD</a></li>
         </ul>
       </nav>
-      <div id="foods-dialog" style="display: none;">
-        <dialog class="to-order" open>
-          <header>🍔🍕🍕fast to fast for to eat🍕🍕🍔</header>
+      <div id="cards-dialog" style="display: none;">
+        <dialog open class="cards-dialog">
+          <header class="register">Register</header><br>
   
-          <section >
-            <input id="nu" type="number" placeholder="Number of orders*" />
-            <input id="loc" type="text" placeholder="Your location*"/>
-            <input id="pho" type="text" placeholder="Phone number*"/>
-            <input id="date" type="date" placeholder=""/>
-            
-            <textarea name="" id="mess" cols="30" rows="10" placeholder="Other..."></textarea>
+          <section class="carddialog">
+            <label for="">Your Name*</label>
+            <input id="N" type="text" placeholder="Your Name" />
+            <label for="">Email*</label>
+            <input id="E" type="email" placeholder="Your Email or Phone number" />
+            <label for="">Password*</label>
+            <input id="P" type="password" placeholder="Password" />
+            <button onclick="submit()">LOGIN</button>
           </section>
-          <menu>
-            <button onclick="onCancel()">Cancel</button>
-            <button onclick="OrderNow()">Order Now</button>
-            <div class="choosed"></div>
+          <menu class="menu">
+            <button onclick="back()">BACK</button>
           </menu>
         </dialog>
       </div>
+      
       <div class="container">
         <div class="search">
             <p><input type="search"  onkeyup="myFunction()" placeholder="waht are you looking for..."> <img src="../../img/search.png" alt=""  width="1%"></p>
           </div>
-        </div>
+        </div><br><br>
         <div class="food">
       
           <h2><span>Choose</span> from dozens of cuisines and order online for home <span>delivery</span></h2>
-        <div class="choose"></div>
-      </div>
+          <div class="choose"></div>
+          
+        </div>
+        <div class="star_dialog">
+  
+        </div>
 
-
-
+      
+      
       <div class="footer">
         <div class="help">
             <h3>Follow Fastfood Page</h3>
@@ -75,3 +80,4 @@
 </body>
 <script src="customer.js"></script>
 </html>
+
